@@ -1,0 +1,13 @@
+\chapter{Functionnal Hardware testing of Serval Mesh Extender}
+
+
+\section{Environmental testing}
+
+
+\section{Post-assembly testing}
+
+\subsection{Test 1 : Boot-loader and flash firmware update}
+
+This is the very first task I have to implement. The goal is to prepare the manufactured Mesh Extender units for the tests and use. In order to do it, we have to install a special Linux distribution on it called OpenWrt. OpenWrt is an embedded operating system based on Linux, primarily used on embedded devices to route network traffic. All components have been optimised for size, to be small enough for fitting into the limited storage and memory available in home routers as the Serval Mesh Extender. \\
+In order to install the latest version of the OS, we will use here the command-line interface Shell. This will allow to boot directly the Domino from a laptop. But at this point, we need to make these two entities capable of communicate to each other. That is why we need cables and especially one that can deals with the extender serial port. For this one, we have for the moment a home-made cable that use a D-SUB 25 pins male port on one side and whatever we want on the other side by cutting the edge of the cable and weld composants on the desired nude wires. That is why we have welded here a serial port to USB adaptor and a power plug to power the PCB. \\
+So now we can talk to the PCB with the laptop through command lines. But there is a problem remaining. Serial port is too slow to transfer data and at some point, we will have to download on the Domino the OpenWrt software binaries. That is why we also use an ethernet cable to install the distribution in addition to the serial cable. 
