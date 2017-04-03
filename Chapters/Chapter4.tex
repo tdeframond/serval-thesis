@@ -25,5 +25,85 @@ or if we have trouble with cu: \\
 
 > screen /dev/cu.usbserial 115200 \\
 
-In either case, change /dev/cu.usbserial to the correct device name for the USB to serial adapter. Reboot the node in some way, so that you see the uboot prompt. Then press any key to interrupt the boot process.\\
-The Mesh Extender node will have an IP of 192.168.1.1, so pick another IP address on that subnet for the connected computer and type "httpd" to start the firmware update webserver. Then, just browse to http://192.168.1.1 and select the firmware file to upload, and trigger the firmware update.  
+In either case, we will have to reboot the node in some way, so that we see the uboot prompt. Then we have to press any key to interrupt the boot process.\\
+The Mesh Extender node will have an IP of 192.168.1.1, so we should pick another IP address on that subnet for the connected computer and type "httpd" to start the firmware update webserver. Then, just browse to http://192.168.1.1 and select the firmware file to upload, and trigger the firmware update. \\
+
+So here is my very first expect script for that : \\
+\begin{lstlisting}
+#!/usr/bin/expect
+#Expect script installing an openWrt image on the Serval Mesh Extender
+
+set timeout -1
+log_user 0
+
+spawn cu -l /dev/cu.usbserial -s 115200
+
+expect {
+	"Connected." 
+	{
+	 	puts "\n##############################################\n# MESH EXTENDER FIRMWARE UPDATER\n#\n# 1/7 > Please, boot or reboot the PCB" 
+	}
+}
+
+expect {
+	"Hit any key" 
+	{ 
+		send "\r" 
+		puts "# 2/7 > Autoboot well interrupted" 
+	}
+}
+
+expect {
+	"uboot>" 
+	{ 
+		send "httpd\r" 
+		puts "# 3/7 > Server HTTP well started" 
+	}
+}
+
+expect {
+	"HTTP server is ready!"
+	{ 
+		puts "# 4/7 > Uploading the image..." 
+		system curl --silent -o /dev/null -F 'firmware=@./openwrt-ar71xx-generic-gl-ar150-squashfs-sysupgrade.bin' -F 'filename=\$openwrt-ar71xx-generic-gl-ar150-squashfs-sysupgrade.bin' http://192.168.1.1/ 
+	}
+}
+
+expect {
+	"upload is done!"
+	{ 
+		puts "# 5/7 > Upload successful\n# 6/7 > Upgrading the firmware... DO NOT POWER OFF " 
+	}
+}
+
+expect {
+	"done!"
+	{ 
+		puts "# 7/7 > HTTP upgrade is done! Rebooting..." 
+	}
+}
+
+expect {
+	"Hit any key" 
+	{ 
+		send "\r" 
+		puts "#\n# FIRMWARE SUCCESSFULLY UPDATED, ENJOY!\n##############################################\n" 
+	}
+}
+\end{lstlisting} \\
+And this is what it outputs :\\
+\begin{lstlisting}
+##############################################
+# MESH EXTENDER FIRMWARE UPDATER
+#
+# 1/7 > Please, boot or reboot the PCB
+# 2/7 > Autoboot well interrupted
+# 3/7 > Server HTTP well started
+# 4/7 > Uploading the image...
+# 5/7 > Upload successful
+# 6/7 > Upgrading the firmware... DO NOT POWER OFF 
+# 7/7 > HTTP upgrade is done! Rebooting...
+#
+# FIRMWARE SUCCESSFULLY UPDATED, ENJOY!
+##############################################
+\end{lstlisting} 
