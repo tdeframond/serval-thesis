@@ -90,8 +90,10 @@ expect {
 		puts "#\n# FIRMWARE SUCCESSFULLY UPDATED, ENJOY!\n##############################################\n" 
 	}
 }
-\end{lstlisting} \\
+\end{lstlisting} 
+
 And this is what it outputs :\\
+
 \begin{lstlisting}
 ##############################################
 # MESH EXTENDER FIRMWARE UPDATER
@@ -107,3 +109,13 @@ And this is what it outputs :\\
 # FIRMWARE SUCCESSFULLY UPDATED, ENJOY!
 ##############################################
 \end{lstlisting} 
+
+\subsection{Test 2 : Network connections}
+
+The second automatic test i have to implement are related to the Mesh networks. Indeed we have to make sure that, after an upgrade or any random boot, the Mesh Extender will provide the expected networks. That means two wireless connections and one Ethernet connection. The first wireless connection is actually a hotspot on which every device can connect. The second one is the ad-hoc peer connection in order to communicate with other Mesh Extenders. This is the one who will diffuse all the Rhizome messages. Then the Ethernet connection is here to enable the transfer of data on the Mesh from a laptop. It will be a way to connect whatever else devices locally to the Extender as well. \\
+This test is a bit more complicated than the first one because it needs the output of the program to react according to it. This is a highest level of expect and did a lot of research to finally understand how we can fix this issue. Actually with expect, we can definitely not read the output of a shell. Or at least not directly. What we can though is to record or redirect this output into a file and then, read this file with expect. It is not very practical, it consumes time and memory but this is the only way... \\
+In this program, first of all i need to check the presence of the wireless networks. For this purpose, i use the airport tool available in the Unix environment. There in one little problem though. The airport software is most of the time already installed on laptops but we have to add it to the global PATH before we can use it. Once this is done, we can check for the Wifi networks from the shell with the command : \\
+> airport -s \\
+We filter the result of it by piping the output with the grep command which i redirect directly into a file in order to use it with expect after : \\
+> airport -s | grep servalproject > networks-found  \\
+Now, we have to check if the networks-found file contains indeed the networks we are looking for. We also have to make sure that, if there is many Mesh Extender working at the same time, the networks we are looking at is really the one from the Mesh Extender we are testing and not the one from another. For this, we can just compare the mac address of both the Mesh Extender and the one from the Wifi network. For testing the test script, i just simulate and assume that the mac-address of the testing Mesh Extender will be in an other file. I just have then to open both of these files and compare them. If both of the addresses match, test is successful. 
