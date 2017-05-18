@@ -17,12 +17,28 @@ In my five years of study, I have never really worked in a laboratory as a resea
 Last and not the least, I really appreciate the humanitarian aspect of the project. Indeed, as I will explain in the next section, the Serval Project is here to help poor islands from the pacific to recover after a natural disaster for example. It can also be the first step for poor villages to have access to distant communication without having to invest into expensive and permanent infrastructures. If I can work for a good and human purpose, it is better. I am really happy to help in this adventure rather to work for big industries who just care about money despite the environment or human conditions. 
 
 \section{Scope}
+The Serval Project is a suite of technologies designed to facilitate and sustain mobile telecommunications in the absence of supporting infrastructure, such as cellular networks or electricity. \par The two main components of the Serval Project are the Serval Mesh Extender Hardware and the Serval Mesh App. Basically the Serval Mesh Extender is a low-cost communications relay device that extends the range of communications among phones using Wifi technology. The laboratory has a partnership with my university in France named INSA de Lyon so that each year, French students can help on the project as a one semester exchange program. I am one of these student. \\ 
+
+For the year 2017, the Australian Department of Foreign Affairs and Trade have commissioned the University to pilot Serval in the Pacific. Consequently, we have to prepare the Serval Mesh Extender technologies for field use in tropical-maritime environments, and without any dependencies on mains electricity. To this end the first Serval Mesh Extender is being redesigned to satisfy these requirements. However, this process is not yet complete. \par
+
+Therefore there is an need to devise and apply a testing regime for the new Serval Mesh Extender design, to ensure that it meets the necessary functional requirements, and that the units are possible to easily manufacture. The focus of this project will be on the creation and application of such test protocols, to ensure that the Serval Mesh Extender devices are ready for deployment in the field pilot.
 
 \section{Research questions}
+For this work I am following an Agile methodology. Therefore I have to organize my experiments in an iterative way and plan them with precise steps and precise goals. A list of the automatic tests I have to implement will help me with this. \\
+The tests must be automatic and quick. That is why I need to implement them in a logical and low-level software environment. Basically I will connect the Mesh Extenders with a laptop and then run all the tests on it. In the end, it will display all the results so we can know if the extenders are ready to use or if we have to do some changes on the settings and if the manufacturing of the extender is okay. \\
+Finally and with the help of my supervisor instructions, I used Expect and Shell scripts to code my test. 
+These are the different parts of the Serval Project I will have to implement tests for : 
+\begin{itemize}
+\item Mesh Extender hardware 
+\item Mesh Extender cables
+\item Mesh Extender software 
+\item Mesh Extender network functions
+\item end-to-end connection testing with various topologies
+\item manufacturing quality control 
+\item acceptance testing
+\end{itemize}
+Since we have to be ready for the Vanuatu expedition which will happen in May, work must be done in two or three months. That makes thus two or three tests by months. According to the fact I have to see and learn how the Mesh Extender operates and the callback I need in Expect and Shell language. 
+
 
 \section{Structure of Thesis}
-
-
-Phasellus nisi quam, volutpat non ullamcorper eget, congue fringilla leo. Cras et erat et nibh placerat commodo id ornare est. Nulla facilisi. Aenean pulvinar scelerisque eros eget interdum. Nunc pulvinar magna ut felis varius in hendrerit dolor accumsan. Nunc pellentesque magna quis magna bibendum non laoreet erat tincidunt. Nulla facilisi.
-
-Duis eget massa sem, gravida interdum ipsum. Nulla nunc nisl, hendrerit sit amet commodo vel, varius id tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac dolor est. Suspendisse ultrices tincidunt metus eget accumsan. Nullam facilisis, justo vitae convallis sollicitudin, eros augue malesuada metus, nec sagittis diam nibh ut sapien. Duis blandit lectus vitae lorem aliquam nec euismod nisi volutpat. Vestibulum ornare dictum tortor, at faucibus justo tempor non. Nulla facilisi. Cras non massa nunc, eget euismod purus. Nunc metus ipsum, euismod a consectetur vel, hendrerit nec nunc.
+The structure of my thesis will follow a height points pattern. After this introduction, I'm going to do some literature review in order to get the context of the Serval Project and to know exactly where about we are in it. I will deal with the different versions of the Serval Mesh extender and introduce the new design of the last version. Then, the methodology will be an other part follow by the Pacific Humanitarian Project which is the reason why we can run this project at this level now. The next big part is the hardware tests split into two categories : the Environmental Testing and the Post-Assembly testing. The first one concerns the abilities of the Mesh Extender to run into a certain environment, for example rain or dust. The second one is more about the software and utility requirements. Next part is obviously the software tests. I will finally present the simulated field operation of the Mesh Extender before discussing all the project and to conclude introduce the future direction of the Serval Project.
