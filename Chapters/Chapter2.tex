@@ -1,4 +1,4 @@
-\chapter{Literature Review}
+\chapter{Serval}
 
 \section{The Serval Project}
 
@@ -17,13 +17,24 @@ Serval is here to help with one main purpose: COMMUNICATE, regardless the condit
 
 \subsection{Serval purposes}
 As cellular network is not everywhere and always accessible, the Serval Project is about creating an alternative communication network that does not depend on a big, official and expensive infrastructure. That means they do not need a license neither nor a carrier. In this conditions, Serval is using a Mobile Ad-Hoc Network (MANETs) which is appropriate for this. \\
-An other goal of the Project is to connect sensors to this network in order to monitor wide remote area. For example, a farmer wants to know if a door is open on the other side of his huge farmland. 
+An other goal of the Project is to connect sensors to this network in order to monitor wide remote area. For example, a farmer wants to know if a door is open on the other side of his huge farmland. By connected sensors to the Mesh Extender of the network we can in addition to the cellular network, create a sensor network. Of course we can imagine lots of other use to this network as far as it does not need a big amount of data speed. 
 
 
-\section{Testing Methodologies}
+\subsection{Serval's funding}
+In the past years, Serval had several partnerships which include the Shuttlerworth Foundation, NLet Foundation, the Awesome Foundation for the Arts & Science, the New America Foundation, Internews, Open Internet Tools Project, Flinders University of course and many other institutional and private contributors. But this year is a special year since the Serval Project has been nominated by the Australian Government in the Pacific Humanitarian Challenge which I will explain in the next point. The Australian Department of Foreign Affairs is thus one of the more important funder this year thanks to this challenge. 
 
-Phasellus nisi quam, volutpat non ullamcorper eget, congue fringilla leo. Cras et erat et nibh placerat commodo id ornare est. Nulla facilisi. Aenean pulvinar scelerisque eros eget interdum. Nunc pulvinar magna ut felis varius in hendrerit dolor accumsan. Nunc pellentesque magna quis magna bibendum non laoreet erat tincidunt. Nulla facilisi.
 
-\section{Pacific Humanitarian Challenge}
+\section{The Pacific Humanitarian Challenge}
+\subsection{The challenge}
+In November 2015 the Australian government called on innovators, entrepreneurs, designers, NGOs, and academics to rethink humanitarian response. They received 129 applications from 20 countries across five continents. Ten First Round Winners were selected to attend a Design Sprint in March 2016 where they further refined their applications with coaching from advisors. After much consideration, five teams were selected to share in a 2 million AUD fund for running pilot projects in the Pacific. Serval is part of them. \\
+As a consequence, they have to pilot a first experiment of this project in Vanuatu in May 2017 to test and qualified their work. If this is a success, Serval Project will have more help from the government in the future to make the project evolve further. \\
+To this end, there is a need to develop and increase the Mesh Extender so it will be ready for the pacific conditions and can handle it.
 
-Duis eget massa sem, gravida interdum ipsum. Nulla nunc nisl, hendrerit sit amet commodo vel, varius id tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac dolor est. Suspendisse ultrices tincidunt metus eget accumsan. Nullam facilisis, justo vitae convallis sollicitudin, eros augue malesuada metus, nec sagittis diam nibh ut sapien. Duis blandit lectus vitae lorem aliquam nec euismod nisi volutpat. Vestibulum ornare dictum tortor, at faucibus justo tempor non. Nulla facilisi. Cras non massa nunc, eget euismod purus. Nunc metus ipsum, euismod a consectetur vel, hendrerit nec nunc.
+\subsection{Mesh Extender, first version}
+To create that communication network and as the UHF radios in the smartphones can not be used that easily, Serval invented the Mesh Extender which is an external device basically working like a smart wifi antenna. As the Serval network is based on a wifi ad-hoc topology, people can only communicate to each other within the range of their wifi device. Of course this one is not that important. This is why we need the Mesh Extender which can extends the range of every device nearby thanks to his radio antennas. With the Mesh Extender, the Serval Network can finally be used like a traditional cellular network with minimizing range problems. \\
+This device is made on a PCB base including both RFD900X + Atheros 9k based embedded Linux computer, a wifi antenna, two radios antennas, an SD card slot, a USB slot, an Ethernet port, a serial port so we can connected with many different possible ways.
+
+\subsection{Mesh Extender, second version}
+The first version of the Mesh Extender was not ready to face the conditions of the pacific challenge. Therefore there was a need to prepare it for this. By this, i mean the tropical climate, the heavy rains and the lack of electricity in some places. For this points we need to improve the Mesh Extender in order to make it resilient against the rain, the dust and the wind. Moreover we also have to make it autonomous in terms of energy. \\
+For the first issue, Serval visited the world of injection moulding with a colleague from the university. Together with a local injection moulding company, they have found a way to get full-custom polycarbonate injection-moulded cases designed and manufactured at a relatively affordable price. With this, we have now an IP65 or IP66 rating for the case, so that it can be safely used in dusty outback conditions, as well as in tropical maritime climates.\\
+The second issue has been fixed with the interesting idea to include a solar and battery controller in the unit. We can now just plug in a solar panel, car battery or other supply to run the unit, in addition to the normal 5V USB supply.  We are also able to connect two LiFePO4 cells, that the unit would charge from the supply, and use to operate when there is no power supply available. 
