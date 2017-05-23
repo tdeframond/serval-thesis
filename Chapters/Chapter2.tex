@@ -1,11 +1,10 @@
 \chapter{Serval}
 
-\section{The Serval Project}
+\section{What is Serval ?}
 
-\subsection{What is Serval ?}
+\subsection{The Serval Project}
 Serval is a humanitarian open source project aiming at providing means of communication to people in the incapacity to of having cellular coverage. "Cellular communication is great when it's available" but it is not always the case. This is why Serval offers an independent and autonomous cellular network which works with mesh extenders and normal smartphones without the need of external cellular infrastructures. \\
 This project was created in 2010 by my supervisor Paul Gardner-Stephen and Romana Challans in response to the terrible and disastrous earthquake that happened in Haiti just before. Years after years, many people join the team to work and help on the project which is based in the telecommunications laboratory of Flinders University in Tonsley, Mitchell Park, SA. 
-
 
 \subsection{Why Serval ?}
 Serval is here to help with one main purpose: COMMUNICATE, regardless the conditions and circumstances.
@@ -15,13 +14,24 @@ Serval is here to help with one main purpose: COMMUNICATE, regardless the condit
 \item Communicate privately, with end-to-end encryption for phones calls and SMS.
 \end{itemize}
 
+\subsection{How does Serval work ?}
+Basically people can use the service as a usual cellular network in calling or sending SMS to each other. The usage differences are that they need a special application to do it and that all these communications are not instantaneous. A message can take either two seconds or two days to reach its destination depending on the situations and locations of the users. The practical difference is that they do not need cellular infrastructures. They can communicate in a desert and uncovered environment or even after a natural disaster when all communication means are down\\
+Serval is composed of two main components : The Serval Mesh application and the Serval Mesh Extender device. 
+
+\subsubsection{The Serval Mesh application}
+To be able to connect to the Serval communication network, the user has to posses a smartphone with this special application installed on it. The application is currently developed by Jeremie on Android but will be soon available for iOS. The reason why Jeremie does not want to migrate to iPhones is that you are not allowed to install untrusted and third-tier applications without a jailbreak version on iPhones. And this is obviously important for Serval since the goal is too deploy the network in case of natural disaster, e.g. when there is no data connection to download the application on the official store. In this situation the application will be downloaded directly on the Serval network or on a other device, which is not possible with iPhones because of its restrictions. \\
+Serval Mesh allows you to send SMS (MeshMS), calls, updates or even allows you to ask for help to other connected devices and contact a help desk. If you do not have the application installed, you can still connect to the Serval captive portal served by the Serval Mesh Extender and do similar tings as with the application but with a less rich experience.
+
+\subsubsection{The Serval Mesh Extender}
+To be able to establish communication between users, they need to interact from smartphone to smartphone but only with the wifi ad-hoc connection. Sometimes the range of these wifi are not sufficient to create an efficient cellular network. That is why Serval created the Mesh Extender which is a device designed to extend the range of the network with UFF radios. It can extends the range of every device nearby thanks to his two radio antennas and wifi antennas. With the Mesh Extender, the Serval Network can finally be used like a traditional cellular network with minimizing range problems. Basically smartphones connect to Mesh Extender with normal wifi at short distances while Mesh Extenders can talk to each other at long distance using the UHF. This is how we can establish contact between two distant smartphones. \\
+This device is made on a PCB base including both RFD900X + Atheros 9k based embedded Linux computer, a wifi antenna, two UHF radios antennas, an SD card slot, a USB slot, an Ethernet port and a serial port. 
+
 \subsection{Serval purposes}
 As cellular network is not everywhere and always accessible, the Serval Project is about creating an alternative communication network that does not depend on a big, official and expensive infrastructure. That means they do not need a license neither nor a carrier. In this conditions, Serval is using a Mobile Ad-Hoc Network (MANETs) which is appropriate for this. \\
 An other goal of the Project is to connect sensors to this network in order to monitor wide remote area. For example, a farmer wants to know if a door is open on the other side of his huge farmland. By connected sensors to the Mesh Extender of the network we can in addition to the cellular network, create a sensor network. Of course we can imagine lots of other use to this network as far as it does not need a big amount of data speed. 
 
-
 \subsection{Serval's funding}
-In the past years, Serval had several partnerships which include the Shuttlerworth Foundation, NLet Foundation, the Awesome Foundation for the Arts & Science, the New America Foundation, Internews, Open Internet Tools Project, Flinders University of course and many other institutional and private contributors. But this year is a special year since the Serval Project has been nominated by the Australian Government in the Pacific Humanitarian Challenge which I will explain in the next point. The Australian Department of Foreign Affairs is thus one of the more important funder this year thanks to this challenge. 
+In the past years, Serval had several partnerships which include the Shuttlerworth Foundation, NLet Foundation, the Awesome Foundation for the Arts and Science, the New America Foundation, Internews, Open Internet Tools Project, Flinders University of course and many other institutional and private contributors. But this year is a special year since the Serval Project has been nominated by the Australian Government in the Pacific Humanitarian Challenge which I will explain in the next point. The Australian Department of Foreign Affairs is thus one of the more important funder this year thanks to this challenge. 
 
 
 \section{The Pacific Humanitarian Challenge}
@@ -30,11 +40,10 @@ In November 2015 the Australian government called on innovators, entrepreneurs, 
 As a consequence, they have to pilot a first experiment of this project in Vanuatu in May 2017 to test and qualified their work. If this is a success, Serval Project will have more help from the government in the future to make the project evolve further. \\
 To this end, there is a need to develop and increase the Mesh Extender so it will be ready for the pacific conditions and can handle it.
 
-\subsection{Mesh Extender, first version}
-To create that communication network and as the UHF radios in the smartphones can not be used that easily, Serval invented the Mesh Extender which is an external device basically working like a smart wifi antenna. As the Serval network is based on a wifi ad-hoc topology, people can only communicate to each other within the range of their wifi device. Of course this one is not that important. This is why we need the Mesh Extender which can extends the range of every device nearby thanks to his radio antennas. With the Mesh Extender, the Serval Network can finally be used like a traditional cellular network with minimizing range problems. \\
-This device is made on a PCB base including both RFD900X + Atheros 9k based embedded Linux computer, a wifi antenna, two radios antennas, an SD card slot, a USB slot, an Ethernet port, a serial port so we can connected with many different possible ways.
-
 \subsection{Mesh Extender, second version}
 The first version of the Mesh Extender was not ready to face the conditions of the pacific challenge. Therefore there was a need to prepare it for this. By this, i mean the tropical climate, the heavy rains and the lack of electricity in some places. For this points we need to improve the Mesh Extender in order to make it resilient against the rain, the dust and the wind. Moreover we also have to make it autonomous in terms of energy. \\
 For the first issue, Serval visited the world of injection moulding with a colleague from the university. Together with a local injection moulding company, they have found a way to get full-custom polycarbonate injection-moulded cases designed and manufactured at a relatively affordable price. With this, we have now an IP65 or IP66 rating for the case, so that it can be safely used in dusty outback conditions, as well as in tropical maritime climates.\\
 The second issue has been fixed with the interesting idea to include a solar and battery controller in the unit. We can now just plug in a solar panel, car battery or other supply to run the unit, in addition to the normal 5V USB supply.  We are also able to connect two LiFePO4 cells, that the unit would charge from the supply, and use to operate when there is no power supply available. 
+
+\subsection{Scope}
+With this mission in the Vanuatu, we expect the manufacturing of maybe one hundred new Mesh Extender in order to install them in the field pilot. Therefore there is a need to test all of them at the reception to be sure they are functional and ready for the Vanuatu experiment. So I will have to develop manufacturing test in addition to the software tests.

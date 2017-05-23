@@ -19,33 +19,38 @@
 \contentsline {section}{\numberline {1.2}Scope}{2}{section.24}
 \contentsline {section}{\numberline {1.3}Research questions}{3}{section.25}
 \contentsline {section}{\numberline {1.4}Structure of Thesis}{4}{section.26}
-\contentsline {chapter}{\numberline {2}Literature Review}{5}{chapter.27}
-\contentsline {section}{\numberline {2.1}Serval Mesh and Serval Mesh Extender}{5}{section.28}
-\contentsline {subsection}{\numberline {2.1.1}First Generation Serval Mesh Extender}{5}{subsection.29}
-\contentsline {subsection}{\numberline {2.1.2}Second Generation Serval Mesh Extender Design}{6}{subsection.30}
-\contentsline {section}{\numberline {2.2}Testing Methodologies}{6}{section.31}
-\contentsline {section}{\numberline {2.3}Pacific Humanitarian Challenge}{6}{section.32}
-\contentsline {chapter}{\numberline {3}FAC Method and Material}{7}{chapter.33}
-\contentsline {section}{\numberline {3.1}Test methodology...}{7}{section.34}
-\contentsline {section}{\numberline {3.2}Simulation methodology...}{8}{section.35}
-\contentsline {chapter}{\numberline {4}Functionnal Hardware testing of Serval Mesh Extender}{9}{chapter.36}
-\contentsline {section}{\numberline {4.1}Environmental testing}{9}{section.37}
-\contentsline {section}{\numberline {4.2}Post-assembly testing}{9}{section.38}
-\contentsline {subsection}{\numberline {4.2.1}Test 1 : Boot-loader and flash firmware update}{9}{subsection.39}
-\contentsline {subsection}{\numberline {4.2.2}Test 2 : Network connections}{12}{subsection.115}
-\contentsline {chapter}{\numberline {5}Functionnal Software testing of Serval Mesh Extender}{14}{chapter.116}
-\contentsline {section}{\numberline {5.1}A Section}{14}{section.117}
-\contentsline {subsection}{\numberline {5.1.1}A Subsection}{15}{subsection.118}
-\contentsline {section}{\numberline {5.2}Another Section}{15}{section.119}
-\contentsline {chapter}{\numberline {6}Simulated Field Operation of Serval Mesh Extender}{16}{chapter.120}
-\contentsline {section}{\numberline {6.1}A Section}{16}{section.121}
-\contentsline {subsection}{\numberline {6.1.1}A Subsection}{17}{subsection.122}
-\contentsline {section}{\numberline {6.2}Another Section}{17}{section.123}
-\contentsline {chapter}{\numberline {7}Discussion}{18}{chapter.124}
-\contentsline {section}{\numberline {7.1}A Section}{18}{section.125}
-\contentsline {subsection}{\numberline {7.1.1}A Subsection}{18}{subsection.126}
-\contentsline {section}{\numberline {7.2}Another Section}{19}{section.127}
-\contentsline {chapter}{\numberline {8}Conclusions and Future Direction}{20}{chapter.128}
+\contentsline {chapter}{\numberline {2}Serval}{5}{chapter.27}
+\contentsline {section}{\numberline {2.1}The Serval Project}{5}{section.28}
+\contentsline {subsection}{\numberline {2.1.1}What is Serval ?}{5}{subsection.29}
+\contentsline {subsection}{\numberline {2.1.2}Why Serval ?}{5}{subsection.30}
+\contentsline {subsection}{\numberline {2.1.3}Serval purposes}{6}{subsection.31}
+\contentsline {subsection}{\numberline {2.1.4}Serval's funding}{6}{subsection.32}
+\contentsline {section}{\numberline {2.2}The Pacific Humanitarian Challenge}{6}{section.33}
+\contentsline {subsection}{\numberline {2.2.1}The challenge}{6}{subsection.34}
+\contentsline {subsection}{\numberline {2.2.2}Mesh Extender, first version}{7}{subsection.35}
+\contentsline {subsection}{\numberline {2.2.3}Mesh Extender, second version}{7}{subsection.36}
+\contentsline {chapter}{\numberline {3}FAC Method and Material}{8}{chapter.37}
+\contentsline {section}{\numberline {3.1}Test methodology...}{8}{section.38}
+\contentsline {subsection}{\numberline {3.1.1}Test overlook}{9}{subsection.39}
+\contentsline {section}{\numberline {3.2}Simulation methodology...}{9}{section.40}
+\contentsline {chapter}{\numberline {4}Functionnal Hardware testing of Serval Mesh Extender}{10}{chapter.41}
+\contentsline {section}{\numberline {4.1}Environmental testing}{10}{section.42}
+\contentsline {section}{\numberline {4.2}Post-assembly testing}{10}{section.43}
+\contentsline {subsection}{\numberline {4.2.1}Test 1 : Boot-loader and flash firmware update}{10}{subsection.44}
+\contentsline {subsection}{\numberline {4.2.2}Test 2 : Network connections}{13}{subsection.120}
+\contentsline {chapter}{\numberline {5}Functionnal Software testing of Serval Mesh Extender}{15}{chapter.121}
+\contentsline {section}{\numberline {5.1}A Section}{15}{section.122}
+\contentsline {subsection}{\numberline {5.1.1}A Subsection}{16}{subsection.123}
+\contentsline {section}{\numberline {5.2}Another Section}{16}{section.124}
+\contentsline {chapter}{\numberline {6}Simulated Field Operation of Serval Mesh Extender}{17}{chapter.125}
+\contentsline {section}{\numberline {6.1}A Section}{17}{section.126}
+\contentsline {subsection}{\numberline {6.1.1}A Subsection}{18}{subsection.127}
+\contentsline {section}{\numberline {6.2}Another Section}{18}{section.128}
+\contentsline {chapter}{\numberline {7}Discussion}{19}{chapter.129}
+\contentsline {section}{\numberline {7.1}A Section}{19}{section.130}
+\contentsline {subsection}{\numberline {7.1.1}A Subsection}{19}{subsection.131}
+\contentsline {section}{\numberline {7.2}Another Section}{20}{section.132}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Direction}{21}{chapter.133}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}An Appendix}{21}{appendix.129}
+\contentsline {chapter}{\numberline {A}An Appendix}{22}{appendix.134}
 \vspace {2em}
