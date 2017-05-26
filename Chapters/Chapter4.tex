@@ -1,121 +1,38 @@
-\chapter{Functionnal Hardware testing of Serval Mesh Extender}
+\chapter{FAC  Method and Material}
 
 
-\section{Environmental testing}
 
+\section{Test methodology...}
+My work methodology is following an Agile method. Every tests can be considered as a single task or a user-story such as my supervisor can be considered as the scrum-master. Each time I chose a new ticket, I try to chose a deadline to fix the ticket according to its complexity. Obviously it is not often easy for me to respect this delay since I am not familiar with the technologies I have to use here. For example, a really simple task can take me a huge amount of time to execute because of my lack of knowledge in these new languages. \\   
+The test methodology is not completely defined and can be different depending on the test himself. Nonetheless, the global aspect follows the same basic pattern every time.
 
-\section{Post-assembly testing}
+\subsection{Test overlook}
+The first task to do before each test is to sort it and classify it between hardware and software categories. This also helps to chose which language will be more adequate to test it and in which environment I have to code it. Most of the time, I write the codes either with a Shell script either with an Expect Script, either with both.  
 
-\subsection{Test 1 : Boot-loader and flash firmware update}
+\section{Simulation methodology...}
 
-This is the very first task I have to implement. The goal is to prepare the manufactured Mesh Extender units for the tests and use. In order to do it, we have to install a special Linux distribution on it called OpenWrt. OpenWrt is an embedded operating system based on Linux, primarily used on embedded devices to route network traffic. All components have been optimized for size, to be small enough for fitting into the limited storage and memory available in home routers as the Serval Mesh Extender. \\
-In order to install the latest version of the OS, we will use here the command-line interface Shell. This will allow to boot directly the Domino from a laptop. But at this point, we need to make these two entities capable of communicate to each other. That is why we need cables and especially one that can deals with the extender serial port. For this one, we have for the moment a home-made cable that use a D-SUB 25 pins male port on one side and whatever we want on the other side by cutting the edge of the cable and weld components on the desired nude wires. That is why we have welded here a serial port to USB adapter and a power plug to power the PCB. \\
-So now we can talk to the PCB with the laptop through command lines. But there is a problem remaining. Serial port is too slow to transfer data and at some point, we will have to download on the Domino the OpenWrt software binaries. That is why we also use an ethernet cable to install the distribution in addition to the serial cable. \\ \\ 
-The procedure is simple, we first connect the laptop and the Mesh Extender with the serial and ethernet cables. Then we plug the power cable in order to make the PCB run. We have to install the Serval software which create the OpenWrt files to transfer to the PCB on a linux environment. To this end, we have to install lots of dependencies like for example GNU awk, SVN, OpenSSL library ...etc. That is why we need to install VirtualBox on Macintosh laptop first. Then, just clone the repository OpenWrt from the Serval Project Github source and run the following commands :\\
-> ./scripts/feeds update serval\\
-> ./scripts/feeds install -p serval\\
-> ./scriptes/feeds install -a serval\\
-> make world (long time running...)\\ \\
-Therefore, the binary for installation should then be in: bin/ar71xx/openwrt-ar71xx-generic-gl-ar150-initramfs-kernel.bin \\
-To flash the PCB, we have to connect to the serial port at 115200 by typing:\\
+Phasellus nisi quam, volutpat non ullamcorper eget, congue fringilla leo. Cras et erat et nibh placerat commodo id ornare est. Nulla facilisi. Aenean pulvinar scelerisque eros eget interdum. Nunc pulvinar magna ut felis varius in hendrerit dolor accumsan. Nunc pellentesque magna quis magna bibendum non laoreet erat tincidunt. Nulla facilisi.
 
-> cu -l /dev/cu.usbserial -s 115200\\
+# Thesis outline:
 
-or if we have trouble with cu: \\ 
-
-> screen /dev/cu.usbserial 115200 \\
-
-In either case, we will have to reboot the node in some way, so that we see the uboot prompt. Then we have to press any key to interrupt the boot process.\\
-The Mesh Extender node will have an IP of 192.168.1.1, so we should pick another IP address on that subnet for the connected computer and type "httpd" to start the firmware update webserver. Then, just browse to http://192.168.1.1 and select the firmware file to upload, and trigger the firmware update. \\
-
-So here is my very first expect script for that : \\
-\begin{lstlisting}
-#!/usr/bin/expect
-#Expect script installing an openWrt image on the Serval Mesh Extender
-
-set timeout -1
-log_user 0
-
-spawn cu -l /dev/cu.usbserial -s 115200
-
-expect {
-	"Connected." 
-	{
-	 	puts "\n##############################################\n# MESH EXTENDER FIRMWARE UPDATER\n#\n# 1/7 > Please, boot or reboot the PCB" 
-	}
-}
-
-expect {
-	"Hit any key" 
-	{ 
-		send "\r" 
-		puts "# 2/7 > Autoboot well interrupted" 
-	}
-}
-
-expect {
-	"uboot>" 
-	{ 
-		send "httpd\r" 
-		puts "# 3/7 > Server HTTP well started" 
-	}
-}
-
-expect {
-	"HTTP server is ready!"
-	{ 
-		puts "# 4/7 > Uploading the image..." 
-		system curl --silent -o /dev/null -F 'firmware=@./openwrt-ar71xx-generic-gl-ar150-squashfs-sysupgrade.bin' -F 'filename=\$openwrt-ar71xx-generic-gl-ar150-squashfs-sysupgrade.bin' http://192.168.1.1/ 
-	}
-}
-
-expect {
-	"upload is done!"
-	{ 
-		puts "# 5/7 > Upload successful\n# 6/7 > Upgrading the firmware... DO NOT POWER OFF " 
-	}
-}
-
-expect {
-	"done!"
-	{ 
-		puts "# 7/7 > HTTP upgrade is done! Rebooting..." 
-	}
-}
-
-expect {
-	"Hit any key" 
-	{ 
-		send "\r" 
-		puts "#\n# FIRMWARE SUCCESSFULLY UPDATED, ENJOY!\n##############################################\n" 
-	}
-}
-\end{lstlisting} 
-
-And this is what it outputs :\\
-
-\begin{lstlisting}
-##############################################
-# MESH EXTENDER FIRMWARE UPDATER
-#
-# 1/7 > Please, boot or reboot the PCB
-# 2/7 > Autoboot well interrupted
-# 3/7 > Server HTTP well started
-# 4/7 > Uploading the image...
-# 5/7 > Upload successful
-# 6/7 > Upgrading the firmware... DO NOT POWER OFF 
-# 7/7 > HTTP upgrade is done! Rebooting...
-#
-# FIRMWARE SUCCESSFULLY UPDATED, ENJOY!
-##############################################
-\end{lstlisting} 
-
-\subsection{Test 2 : Network connections}
-
-The second automatic test i have to implement are related to the Mesh networks. Indeed we have to make sure that, after an upgrade or any random boot, the Mesh Extender will provide the expected networks. That means two wireless connections and one Ethernet connection. The first wireless connection is actually a hotspot on which every device can connect. The second one is the ad-hoc peer connection in order to communicate with other Mesh Extenders. This is the one who will diffuse all the Rhizome messages. Then the Ethernet connection is here to enable the transfer of data on the Mesh from a laptop. It will be a way to connect whatever else devices locally to the Extender as well. \\
-This test is a bit more complicated than the first one because it needs the output of the program to react according to it. This is a highest level of expect and did a lot of research to finally understand how we can fix this issue. Actually with expect, we can definitely not read the output of a shell. Or at least not directly. What we can though is to record or redirect this output into a file and then, read this file with expect. It is not very practical, it consumes time and memory but this is the only way... \\
-In this program, first of all i need to check the presence of the wireless networks. For this purpose, i use the airport tool available in the Unix environment. There in one little problem though. The airport software is most of the time already installed on laptops but we have to add it to the global PATH before we can use it. Once this is done, we can check for the Wifi networks from the shell with the command : \\
-> airport -s \\
-We filter the result of it by piping the output with the grep command which i redirect directly into a file in order to use it with expect after : \\
-> airport -s | grep servalproject > networks-found  \\
-Now, we have to check if the networks-found file contains indeed the networks we are looking for. We also have to make sure that, if there is many Mesh Extender working at the same time, the networks we are looking at is really the one from the Mesh Extender we are testing and not the one from another. For this, we can just compare the mac address of both the Mesh Extender and the one from the Wifi network. For testing the test script, i just simulate and assume that the mac-address of the testing Mesh Extender will be in an other file. I just have then to open both of these files and compare them. If both of the addresses match, test is successful. 
+1. Introduction
+1.1 Motivation
+1.2 Scope
+1.3 Research Questions
+1.4 Structure of Thesis
+2. Literature Review
+2.1 Serval Mesh & Serval Mesh Extender
+2.1.1 First Generation Serval Mesh Extender
+2.1.2 Second Generation Serval Mesh Extender Design
+2.2 Testing Methodologies
+2.3 Pacific Humanitarian Challenge
+[ 3. Method & Materials
+3.1 Test methodology ...
+3.2 Simulation methodology ... ]
+4. Functional Hardware testing of Serval Mesh Extender
+4.1 Environmental testing
+4.2 Post-assembly testing
+5. Functional Software testing of Serval Mesh Extender
+6. Simulated Field Operation of Serval Mesh Extender
+7. Discussion
+8. Conclusions & Future Direction
