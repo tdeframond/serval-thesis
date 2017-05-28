@@ -1,5 +1,27 @@
-\chapter{Litterature review}
+\chapter{Literature review}
 
 \section{Emergency calling system}
+After a disaster or any incident, people are in a need of emergency services. They are supposed to be allowed to call emergency phone numbers for free but this is not always the case. Imagine a serious tsunami that break down all communication means. Even if these numbers are free charged, you will not be able to call them because cellular networks will not be operating. This is what happened in Haiti 2010 for example. 
+Internet is an other way to try to call for help in case of emergency. During terrorist attacks or disaster, Facebook allows people to mark them as safe to let their friends and family know how they are going. But if the cellular network is down, there is a chance that internet connection is also compromised.\\
+This is where Serval network takes place and overcomes these problems by proposing alternative and autonomous communications means.  
 
-\subsection{The Serval Project}
+\section{Competitors projects}
+
+Obviously Serval is not the only one on the subject, there is other projects working on similar topics. Here are some of them. I call them competitors here but there a not really in competition since Serval is more a research and humanitarian project than a business. 
+\par
+ElectroSense Technologies. They sell products for domestic, scientific and commercial purposes. These allow people to monitor and control equipment remotely. It uses SMS, 3G and UHF to access data such as water level, soil moisture or state of electric fences. 
+\par
+GoTenna. Really similar to Serval, they offer a device that extends the range of your smartphone and make you capable of communicate with distance without external infrastructure. This is more focused on leisure activity though.
+\par
+Farm Monitoring Solutions. This is basically the same kind of technologies but apply to farm activities such monitoring water level, power, stock and equipment remotely. They also have a captor powered with solar energy. 
+\par 
+Observant, Ranch Systems and uSEE. Very similar to the Farm Monitoring Solutions and maybe the first rivals in terms of agriculture purpose.
+\par
+Beartooth is probably the number one competitor of Serval. This deals with precisely the same aspects than GoTenna but is a bit more famous. Their slogan is "Because life does not stop where the network ends". 
+
+\section{Mesh network}
+Mesh networks are networks with a particular topology. The nodes do not know the whole network but just their direct neighbors. Each device relays data for the network. Packet goes from node to node with as many hop they need to reach the desire destination. This is not centralized. To shut down the network, it is then necessary to turn off every devices of the network. This is why we can say that mesh networks are resilient. \\
+Serval is using this technology so they do not have to use the usual cellular networks. The network is therefore created by every devices running the Serval Mesh app and the advantage is that they do not need any external infrastructure to communicate. The disadvantage is that the network can sometimes be too small or incomplete. If you want to reach someone who is located too far from you and there is no ones in between to relay the message, this person will not receive the message. Or at least not as far as there will be a gap in the mesh topology. That is why Serval can not promise an instant delivery messaging experience. But this is not the main goal actually.
+
+\section{Testing} 
+As Serval project use lots of different languages and devices, we can not use a normal test frameworks like JUnit for example. Indeed we are not doing a test driven development or just testing codes. My goal in this project is to test the whole thing, not just some codes. This i why I need
