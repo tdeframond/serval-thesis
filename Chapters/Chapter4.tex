@@ -1,43 +1,44 @@
-\chapter{FAC  Method and Material}
+\chapter{Method and Material}
 
+\section{General Functioning}
+\subsection{Management}
+My master project is a bit special in a sense that it is not my personal project. I chose to join an existing one. That means that I have to follow the rules who already run the telecommunication laboratory where I work. At the moment we are a dozen of students/researcher working here on either independent projects either some linked project. As far as I am concerned, Paul and Jeremy are working on the Serval Project as well but I am the only one student working on the tests this semester. Usually they are many French students as the same time and they can therefore help each other, which I can obviously not since I am the only one.
 
+\par
+Paul is the laboratory director. To keep himself updated with all the projects of his students and fellow, he organizes every Monday a "Lab Meeting" at 2.00pm. Everyone has to be here in order to make a brief summary of its work progress by presenting a three point report: "what I did last week, what I will do next week, do I have difficulties ?". This helps him to know the ones who are late, blocked or unwilling to work and the ones who are motivated.
 
-\section{Test methodology...}
+\par
+There is no really strict rules concerning the management of my project. Paul just let me know what he was waiting for and what did I have to do. I am quiet free to handle it as I want as far as I finish the work. Therefore I decided to just take care of one task after the other by following a procedure which I will explain in the next section of this chapter. 
+
+\subsection{Means and documentation}
+As a master student, I can access the laboratory from 6am to 10pm all the week with my student card. In there, I can use lots of different equipment like laptops, screen monitors, tools, phones, printers, antenna ...etc. Some documentations is also available and blackboards help us to brainstorm and through quick drafts on them.
+\par
+The Serval documentation can be found in three different places: internet, papers and local pdf documents. 
+\\
+On internet we can find first the Serval website which is kind of public access to the project with simple and "business" explications. Second we have the Serval wiki which is the developers documentation side of the project. It explains everything with more technical details. As Serval is an open source project, this wiki is quiet exhaustive and obviously completed by a Github repository where all the codes of Serval is stored and totally public. Everyone can access it and add some modification to it. I spent quiet a lot of time to read the wiki in order to learn how Serval work and I also had to clone some depo from the Github to install and work on it. Finally, Paul owns a blog where he posts every step of the project. It may be the place the more up to date and the more illustrate with pictures. This is where we can follow the adventure in real time. A Google group also exists but it is not very active. I tried to start one discussion about my project but got no response.
+\\Finally, the best way for me to find informations was face to face discussions in the laboratory. Although the community is almost inexistent on the web, Paul and Jeremy were very helpful in the lab and were happy to answered my questions. Nothing is better than real human contacts. It was at beginning really hard for me to understand my fellows because of their strong Aussie accent and their fast speaking. Added to the fact that I did not know anything about Serval and the technologies I had to use, it was really hard to jump in the bath. I had to ask them to slow down a bit for me because I could not understand anything. After five months in Australia, it is now easier for me to understand them.  
+
+\section{Test methodology} 
 My work methodology is following an Agile method. Every tests can be considered as a single task or a user-story such as my supervisor can be considered as the scrum-master. Each time I chose a new ticket, I try to chose a deadline to fix the ticket according to its complexity. Obviously it is not often easy for me to respect this delay since I am not familiar with the technologies I have to use here. For example, a really simple task can take me a huge amount of time to execute because of my lack of knowledge in these new languages. \\   
 The test methodology is not completely defined and can be different depending on the test himself. Nonetheless, the global aspect follows the same basic pattern every time.
 
 \subsection{Test technology}
 \subsubsection{Bash}
-As Serval project use lots of different languages and devices, we can not use a normal test frameworks like JUnit for example. Indeed we are not doing a test driven development or just testing codes. My goal in this project is to test the whole thing, not just some codes. This i why I need to use something more general and less specialized than a test framework. To this end, I will use basics shell scripts which are very useful to communicate with the Mesh Extender since it is running on a linux kernel. Bash is the most famous and simple shell language that I can use. It allows me to call directly lots of linux command and high level instructions. This is very practical with what concerns Wi-Fi connections for example 
+As Serval project use lots of different languages and devices, we can not use a normal test frameworks like JUnit for example. Indeed we are not doing a test driven development or just testing codes. My goal in this project is to test the whole thing, not just some codes. This is why I need to use something more general and less specialized than a test framework. To this end, I will use basics shell scripts which are very useful to communicate with the Mesh Extender since it is running on a Linux kernel. Bash is the most famous and simple shell language that I can use. It allows me to call directly lots of Linux command and high level instructions. This is very practical with what concerns Wi-Fi connections for example. 
 
+\subsubsection{Expect}
+Expect is a tool for automating interactive applications such as telnet, ftp, passwd, fsck, rlogin, tip, etc. Expect really makes this shells interactions trivial. It is also useful for testing these same applications. And by adding Tk, we can also wrap interactive applications in X11 GUIs, but this won't be useful in my case. Expect can make easy all sorts of tasks that are prohibitively difficult with anything else.\\
+I was first thinking that it was a useless tool but after using it, I realized that it was not the case at all and that it really helps with my tests. Moreover I even found myself using expect for others purposes like automate my thesis save on Github. Now, with my simple Expect script I can add, commit and push my thesis on the repository with just one script without having to enter my Github password or commit message. 
+\par
+Expect is based on the TCL language, so I had to learn this one as well before starting to use it. Expect add some new command to TCL that are really helpful for automation like the commands : spawn, expect and send. Basically and the most easier way to understand it is as follow. First you start and open a shell command with the "spawn" command, then you wait the shell to respond a particular message with the "expect" command and you react according to this respond with the "send" command which actually just type something for you automatically in the shell. 
 
 \subsection{Test overlook}
-The first task to do before each test is to sort it and classify it between hardware and software categories. This also helps to chose which language will be more adequate to test it and in which environment I have to code it. Most of the time, I write the codes either with a Shell script either with an Expect Script, either with both.  
+The first task to do before each test is to sort it and classify it between hardware and software categories. This also helps to chose which language will be more adequate to test it and in which environment I have to code it. Sometimes just a bash script will be enough to reach my goal, sometimes I will need an expect script to go further. Sometimes expect does not react like it is supposed to with the Mesh Extender, and I have thus to fix this issue by just using the shell. \\
+This is also the phase in which I will talk with my supervisor Paul in order that he explains me all the aspects of the tests and what are his expectations. This is a kind of user story creation where we establish the goals and the tasks to implement in the test.
+
+\subsection{Test creation}
+
 
 \section{Simulation methodology...}
 
 Phasellus nisi quam, volutpat non ullamcorper eget, congue fringilla leo. Cras et erat et nibh placerat commodo id ornare est. Nulla facilisi. Aenean pulvinar scelerisque eros eget interdum. Nunc pulvinar magna ut felis varius in hendrerit dolor accumsan. Nunc pellentesque magna quis magna bibendum non laoreet erat tincidunt. Nulla facilisi.
-
-# Thesis outline:
-
-1. Introduction
-1.1 Motivation
-1.2 Scope
-1.3 Research Questions
-1.4 Structure of Thesis
-2. Literature Review
-2.1 Serval Mesh & Serval Mesh Extender
-2.1.1 First Generation Serval Mesh Extender
-2.1.2 Second Generation Serval Mesh Extender Design
-2.2 Testing Methodologies
-2.3 Pacific Humanitarian Challenge
-[ 3. Method & Materials
-3.1 Test methodology ...
-3.2 Simulation methodology ... ]
-4. Functional Hardware testing of Serval Mesh Extender
-4.1 Environmental testing
-4.2 Post-assembly testing
-5. Functional Software testing of Serval Mesh Extender
-6. Simulated Field Operation of Serval Mesh Extender
-7. Discussion
-8. Conclusions & Future Direction
