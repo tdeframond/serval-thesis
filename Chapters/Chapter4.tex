@@ -39,12 +39,24 @@ This is also the phase in which I will talk with my supervisor Paul in order tha
 
 \subsection{Tools}
 To write my tests I just need a text editor and the terminal. My favorite text editor is Sublime Text. It is very light and helpful with everything. I use it to write either my thesis in Latex or either my Expect and Bash script. It has an auto-completion feature and an integrated spell checker which is really interesting for my thesis writing. 
+\begin{wrapfigure}{l}{0.15\textwidth}
+    \centering
+    \includegraphics[width=0.15\textwidth]{sublime}
+\end{wrapfigure}
 \\
 Before getting started with the development I had to install my environment. Serval OpenWRT which is a light Linux distribution used by the Mesh Extender was the first package I have to install on my laptop in order to create and export the Linux disc image on the PCB. I also had to install Expect of course and many different other tools like for instance Airport which offer a wifi scan service from the shell which will help me with testing the wireless connections.
+\begin{wrapfigure}{r}{0.15\textwidth}
+    \centering
+    \includegraphics[width=0.15\textwidth]{github}
+\end{wrapfigure}
 \par
 I have a personal Github repository to save and share all my thesis work. Here is the link : https://github.com/tdeframond/mesh-extender-provisioning .
+\begin{wrapfigure}{l}{0.15\textwidth}
+    \centering
+    \includegraphics[width=0.15\textwidth]{openwrt}
+\end{wrapfigure}
 \\
-I also created a discussion on the Serval Google group about my work to try to interact with other member of the project : https://groups.google.com/forum/#!topic/serval-project-developers/qUYktshW1x4 . 
+I also created a discussion on the Serval Google group about my work to try to interact with other member of the project : https://groups.google.com/forum/\#!topic/serval-project-developers/qUYktshW1x4 . 
 
 \subsection{Tests pattern}
 My tests are just scripts written as follow : one small script per test so it is easier to code and organize them. Each Expect script is therefore a text file with the name of the test and an 
@@ -52,4 +64,4 @@ My tests are just scripts written as follow : one small script per test so it is
 \\
 There is no input for the moment, I will have to implement that later. If the script needs some inputs, It have them directly in its code. The scripts are thus not really instantaneous adaptable to different Mesh Extender. For example if the test need the mac address of the Mesh Extender, I will give it to him in the code. In the future it would be better that the script can retrieve it automatically.
 \\
-I design all the outputs with the same graphic charts in order to have a unity in the tests. This is a really simple design pattern made of # and > but it is simple, clear and easy to exploit and understand. These outputs keep us knowing how is the test going throughout the whole testing and display the final results at the end. Each specific test has its own and separate output but the goals in the end of the project would be to join all this small tests in a bigger one so we can launch all of them with one command and see all their results in a one place. 
+I design all the outputs with the same graphic charts in order to have a unity in the tests. This is a really simple design pattern made of \# and > but it is simple, clear and easy to exploit and understand. These outputs keep us knowing how is the test going throughout the whole testing and display the final results at the end. Each specific test has its own and separate output but the goals in the end of the project would be to join all this small tests in a bigger one so we can launch all of them with one command and see all their results in a one place. 

@@ -201,12 +201,12 @@
       {\LARGE \authornames \par}
       \vfill
       {\large Functional testing and qualification \par}
-      {\large of the Serval Mesh Extender \par}
+      {\large of the Serval Mesh Extender.}
+      \bigskip
+      {\large Submitted to the School of Computer Science, Engineering, and Mathematics in the Faculty of Science and Engineering in partial fulfilment of the requirements for the degree of Telecommunication at Flinders University – Adelaide Australia.}
       \bigskip
       \bigskip
-      {\large in the \par}
-      {\large \facname \par}
-      {\large \deptname \par}
+      {\large \par Supervisor : Paul GARDNER-STEPHEN \par}
       \bigskip
       \bigskip
       \bigskip

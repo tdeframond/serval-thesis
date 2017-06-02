@@ -4,10 +4,15 @@
 
 % Set up the document
 \documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
-\graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{wrapfig}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 
 % Include any extra LaTeX packages required
-\usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\usepackage{biblatex}
+\addbibresource{Bibliography.bib}
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
 \usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
@@ -47,9 +52,6 @@
             }
 \addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
 \date       {\today}
-\subject    {}
-\keywords   {}
-
 \maketitle
 %% ----------------------------------------------------------------
 
@@ -64,7 +66,7 @@
 
 %% ----------------------------------------------------------------
 % Declaration Page required for the Thesis, your institution may give you a different text to place here
-\Declaration{
+\Declaration{}
 
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
@@ -85,13 +87,6 @@ I, Theo DE FRAMOND, declare that this thesis titled, `Functional testing and qua
 \\
 \end{itemize}
  
- 
-Signed:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
- 
-Date:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
-}
 \clearpage  % Declaration ended, now start a new page
 
 %% ----------------------------------------------------------------
@@ -115,8 +110,10 @@ Serval
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-This paper is the thesis of my Master Project COMP9710A in Flinders University, School of Computer Sciences as an exchange student from France. It explains all the work, tasks and experiments I have done during my project which is the Serval Project and how I did it. The remainder of this content concerns the perspectives and the motivations of such a project and also what I have retained about it.\\
-Keywords : Serval Project, testing, Mesh Extender, emergency communications, LBARD, automatic tests, Servald, Expect. 
+This paper is the thesis of my Master Project COMP9710A in Flinders University, School of Computer Sciences as an exchange student from France. It explains all the work, tasks and experiments I have done during my project. The remainder of this content concerns the perspectives and the motivations of such a project and also what I have retained about it.\\
+My project takes place in the humanitarian and open source project called Serval. Serval Project purpose is to providing means of communication to people in the incapacity of having cellular coverage. To this end they have developed a smart-phone application and a special smart antenna called the Mesh Extender. My role here is to write automated tests to make sure these Mesh Extender are ready for their next use. 
+\par
+Keywords : Serval Project, Testing, Mesh Extender, Emergency Communications, Automatic Tests, Servald, Expect, Master Project. 
 
 }
 
@@ -154,53 +151,6 @@ I would like to thank my friends for accepting nothing less than excellence from
 \lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
 \listoffigures  % Write out the List of Figures
 
-%% ----------------------------------------------------------------
-\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
-\listoftables  % Write out the List of Tables
-
-%% ----------------------------------------------------------------
-\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
-\clearpage  % Start a new page
-\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
-\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
-{
-% \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
-
-}
-
-%% ----------------------------------------------------------------
-\clearpage  % Start a new page
-\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
-\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
-{
-% Constant Name & Symbol & = & Constant Value (with units) \\
-Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-
-}
-
-%% ----------------------------------------------------------------
-\clearpage  %Start a new page
-\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
-\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
-{
-% symbol & name & unit \\
-$a$ & distance & m \\
-$P$ & power & W (Js$^{-1}$) \\
-& & \\ % Gap to separate the Roman symbols from the Greek
-$\omega$ & angular frequency & rads$^{-1}$ \\
-}
-%% ----------------------------------------------------------------
-% End of the pre-able, contents and lists of things
-% Begin the Dedication page
-
-\setstretch{1.3}  % Return the line spacing back to 1.3/Users/serval/Documents/theo/latex/proposal copy/Chapters/Chapter4.tex
-
-\pagestyle{empty}  % Page style needs to be empty for this page
-\dedicatory{For/Dedicated to/To my\ldots}
-
-\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
-
 
 %% ----------------------------------------------------------------
 \mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
@@ -225,27 +175,6 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \input{Chapters/Chapter8}
 
-%% ----------------------------------------------------------------
-% Now begin the Appendices, including them as separate files
-
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
-
-\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
-
-\input{Appendices/AppendixA}	% Appendix Title
-
-%\input{Appendices/AppendixB} % Appendix Title
-
-%\input{Appendices/AppendixC} % Appendix Title
-
-\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
-\backmatter
-
-%% ----------------------------------------------------------------
-\label{Bibliography}
-\lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
-\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
-\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
 
 \end{document}  % The End
 %% ----------------------------------------------------------------

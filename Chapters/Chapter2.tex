@@ -3,39 +3,56 @@
 \section{What is Serval ?}
 
 \subsection{The Serval Project}
-Serval is a humanitarian open source project aiming at providing means of communication to people in the incapacity to of having cellular coverage. "Cellular communication is great when it's available" but it is not always the case. This is why Serval offers an independent and autonomous cellular network which works with mesh extenders and normal smartphones without the need of external cellular infrastructures. \\
-This project was created in 2010 by my supervisor Paul Gardner-Stephen and Romana Challans in response to the terrible and disastrous earthquake that happened in Haiti just before. Years after years, many people join the team to work and help on the project which is based in the telecommunications laboratory of Flinders University in Tonsley, Mitchell Park, SA. 
+Serval is a humanitarian open source project aiming at providing means of communication to people in the incapacity of having cellular coverage. "Cellular communication is great when it's available" but it is not always the case. This is why Serval offers an independent and autonomous cellular network which works with mesh extenders and normal smartphones without the need of external cellular infrastructures. \\
+This project was created in 2010 by my supervisor Paul Gardner-Stephen and Romana Challans in response to the terrible and disastrous earthquake that happened in Haiti just before. Years after years, many people join the team to work and help on the project which is based in the telecommunications laboratory of Flinders University in Tonsley, Mitchell Park, SA.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{serval-logo1}
+\caption{Serval Logo}
+\end{figure}
 
 \subsection{Why Serval ?}
-Serval is here to help with one main purpose: COMMUNICATE, regardless the conditions and circumstances.
+Serval is here to help with one main purpose: COMMUNICATE, regardless the conditions and circumstances. [1]
 \begin{itemize}
 \item Communicate anytime, even when the usual and main phone network is down or the cellular infrastructures are broken.
-\item Communicate anywhere, as cellular networks are not available everywhere. For instance, 75\% of Australia is not covered as lots of poor countries in the world. 
+\item Communicate anywhere, as cellular networks are not available everywhere. For instance, 75\% of Australia is not covered as lots of poor countries in the world. [2] 
 \item Communicate privately, with end-to-end encryption for phones calls and SMS.
 \end{itemize}
 
 \subsection{How does Serval work ?}
-Basically people can use the service as a usual cellular network in calling or sending SMS to each other. The usage differences are that they need a special application to do it and that all these communications are not instantaneous. A message can take either two seconds or two days to reach its destination depending on the situations and locations of the users. The practical difference is that they do not need cellular infrastructures. They can communicate in a desert and uncovered environment or even after a natural disaster when all communication means are down\\
+Basically people can use the service as a usual cellular network in calling or sending SMS to each other. The usage differences are that they need a special application to do it and that all these communications are not instantaneous. A message can take either two seconds or two days to reach its destination depending on the situations and locations of the users. The practical difference is that they do not need cellular infrastructures. They can communicate in a desert and uncovered environment or even after a natural disaster when all communication means are down.\\
 Serval is composed of two main components : The Serval Mesh application and the Serval Mesh Extender device. 
 
 \subsubsection{The Serval Mesh application}
 To be able to connect to the Serval communication network, the user has to posses a smartphone with this special application installed on it. The application is currently developed by Jeremie on Android but will be soon available for iOS. The reason why Jeremie does not want to migrate to iPhones is that you are not allowed to install untrusted and third-tier applications without a jailbreak version on iPhones. And this is obviously important for Serval since the goal is too deploy the network in case of natural disaster, e.g. when there is no data connection to download the application on the official store. In this situation the application will be downloaded directly on the Serval network or on a other device, which is not possible with iPhones because of its restrictions. \\
 Serval Mesh allows you to send SMS (MeshMS), calls, updates or even allows you to ask for help to other connected devices and contact a help desk. If you do not have the application installed, you can still connect to the Serval captive portal served by the Serval Mesh Extender and do similar tings as with the application but with a less rich experience.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{mesh-app}
+\caption{Mesh App screenshot}
+\end{figure}
+
 
 \subsubsection{The Serval Mesh Extender}
-To be able to establish communication between users, they need to interact from smartphone to smartphone but only with the wifi ad-hoc connection. Sometimes the range of these wifi are not sufficient to create an efficient cellular network. That is why Serval created the Mesh Extender which is a device designed to extend the range of the network with UFF radios. It can extends the range of every device nearby thanks to his two radio antennas and wifi antennas. With the Mesh Extender, the Serval Network can finally be used like a traditional cellular network with minimizing range problems. Basically smartphones connect to Mesh Extender with normal wifi at short distances while Mesh Extenders can talk to each other at long distance using the UHF. This is how we can establish contact between two distant smartphones. \\
+To be able to establish communication between users, they need to interact from smartphone to smartphone but only with the wifi ad-hoc connection. [3] Sometimes the range of these wifi are not sufficient to create an efficient cellular network. That is why Serval created the Mesh Extender which is a device designed to extend the range of the network with UFF radios. It can extends the range of every device nearby thanks to his two radio antennas and wifi antennas. With the Mesh Extender, the Serval Network can finally be used like a traditional cellular network with minimizing range problems. Basically smartphones connect to Mesh Extender with normal wifi at short distances while Mesh Extenders can talk to each other at long distance using the UHF. This is how we can establish contact between two distant smartphones. \\
 This device is made on a PCB base including both RFD900X + Atheros 9k based embedded Linux computer, a wifi antenna, two UHF radios antennas, an SD card slot, a USB slot, an Ethernet port and a serial port. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{mesh-extender-v1}
+\caption{First version of the Mesh Extender}
+\end{figure}
 
 \subsubsection{The protocols}
 
 \par
-The main mesh-based data distribution protocol developed by Serval is called Rhizome. It works like a store and forward file distribution system. It operates on data packets containing meta-data and of course the data. Rhizome, as a mesh network protocol, works without centralized infrastructures. It guarantees the integrity of the message payload during the transport but does not guarantee the time and the delay of transportation as mentioned before. It can also define which packet is more important to transfer if there is a queue according to its size and his arrival time. It is probably not expected but the shortest messages are actually here considered like the most important ones. This is Serval philosophy. 
+The main mesh-based data distribution protocol developed by Serval is called Rhizome. It works like a store and forward file distribution system. It operates on data packets containing meta-data and of course the data. Rhizome, as a mesh network protocol, works without centralized infrastructures. It guarantees the integrity of the message payload during the transport but does not guarantee the time and the delay of transportation as mentioned before. It can also define which packet is more important to transfer if there is a queue according to its size and his arrival time. It is probably not expected but the shortest messages are actually here considered like the most important ones. This is Serval philosophy. [4] 
 
 \par
-The core component of the Serval mesh networking products including the app and the extender is called Serval DNA. It contains all the technologies needed such as the Mesh Datagram Protocol (transport), the Voice over Mesh Protocol and of course Rhizome. 
+The core component of the Serval mesh networking products including the app and the extender is called Serval DNA. It contains all the technologies needed such as the Mesh Datagram Protocol (transport), the Voice over Mesh Protocol and of course Rhizome. [5]
 
 \par
-LBARD which stands for Low-Bandwidth Asynchronous Rhizome Demonstrator is the name of the transport protocol developed by Serval which is used between two low-bandwidth interconnected nodes. For example, two Mesh Extender which are communicating through the UHF radios. This protocol is running between to Rhizome instances and help it to synchronize. We need this because Rhizome was previously designed to operate on Wifi connection. Therefore when we use a narrow bandwidth channel, the data do not behave the same way at all.  That is why they needed to develop a more appropriate one for slow data transfers. As Rhizome it is fully encrypted.
+LBARD which stands for Low-Bandwidth Asynchronous Rhizome Demonstrator is the name of the transport protocol developed by Serval which is used between two low-bandwidth interconnected nodes. For example, two Mesh Extender which are communicating through the UHF radios. This protocol is running between to Rhizome instances and help it to synchronize. We need this because Rhizome was previously designed to operate on Wifi connection. Therefore when we use a narrow bandwidth channel, the data do not behave the same way at all.  That is why they needed to develop a more appropriate one for slow data transfers. As Rhizome it is fully encrypted. [6]
 
 \subsection{Serval purposes}
 As cellular network is not everywhere and always accessible, the Serval Project is about creating an alternative communication network that does not depend on a big, official and expensive infrastructure. That means they do not need a license neither nor a carrier. In this conditions, Serval is using a Mobile Ad-Hoc Network (MANETs) which is appropriate for this. \\
@@ -47,6 +64,11 @@ In the past years, Serval had several partnerships which include the Shuttlerwor
 
 \section{The Pacific Humanitarian Challenge}
 \subsection{The challenge}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.80\textwidth]{pacific}
+\caption{Pacific Humanitarian Challenge}
+\end{figure}
 In November 2015 the Australian government called on innovators, entrepreneurs, designers, NGOs, and academics to rethink humanitarian response. They received 129 applications from 20 countries across five continents. Ten First Round Winners were selected to attend a Design Sprint in March 2016 where they further refined their applications with coaching from advisors. After much consideration, five teams were selected to share in a 2 million AUD fund for running pilot projects in the Pacific. Serval is part of them. \\
 As a consequence, they have to pilot a first experiment of this project in Vanuatu in May 2017 to test and qualified their work. If this is a success, Serval Project will have more help from the government in the future to make the project evolve further. \\
 To this end, there is a need to develop and increase the Mesh Extender so it will be ready for the pacific conditions and can handle it.
@@ -55,6 +77,11 @@ To this end, there is a need to develop and increase the Mesh Extender so it wil
 The first version of the Mesh Extender was not ready to face the conditions of the pacific challenge. Therefore there was a need to prepare it for this. By this, i mean the tropical climate, the heavy rains and the lack of electricity in some places. For this points we need to improve the Mesh Extender in order to make it resilient against the rain, the dust and the wind. Moreover we also have to make it autonomous in terms of energy. \\
 For the first issue, Serval visited the world of injection moulding with a colleague from the university. Together with a local injection moulding company, they have found a way to get full-custom polycarbonate injection-moulded cases designed and manufactured at a relatively affordable price. With this, we have now an IP65 or IP66 rating for the case, so that it can be safely used in dusty outback conditions, as well as in tropical maritime climates.\\
 The second issue has been fixed with the interesting idea to include a solar and battery controller in the unit. We can now just plug in a solar panel, car battery or other supply to run the unit, in addition to the normal 5V USB supply.  We are also able to connect two LiFePO4 cells, that the unit would charge from the supply, and use to operate when there is no power supply available. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{moule}
+\caption{The new polycarbonate injection-moulded case}
+\end{figure}
 
 \subsection{Scope and project overview}
 With this mission in the Vanuatu, we expect the manufacturing of maybe one hundred new Mesh Extender in order to install them in the field pilot. Therefore there is a need to test all of them at the reception to be sure they are functional and ready for the Vanuatu experiment. That is why I will have to develop manufacturing test in addition to the software tests. 

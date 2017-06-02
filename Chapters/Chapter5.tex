@@ -3,24 +3,37 @@
 \section{Test 1 : Boot-loader and flash firmware update}
 
 This is the very first task I have to implement. The goal is to prepare the manufactured Mesh Extender units for the tests and use. In order to do it, we have to install a special Linux distribution on it called OpenWrt. OpenWrt is an embedded operating system based on Linux, primarily used on embedded devices to route network traffic. All components have been optimized for size, to be small enough for fitting into the limited storage and memory available in home routers as the Serval Mesh Extender. \\
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{pcb}
+\caption{The PCB of the new Mesh Extender}
+\end{figure}
+
 In order to install the latest version of the OS, we will use here the command-line interface Shell. This will allow to boot directly the Domino from a laptop. But at this point, we need to make these two entities capable of communicate to each other. That is why we need cables and especially one that can deals with the extender serial port. For this one, we have for the moment a home-made cable that use a D-SUB 25 pins male port on one side and whatever we want on the other side by cutting the edge of the cable and weld components on the desired nude wires. That is why we have welded here a serial port to USB adapter and a power plug to power the PCB. \\
 So now we can talk to the PCB with the laptop through command lines. But there is a problem remaining. Serial port is too slow to transfer data and at some point, we will have to download on the Domino the OpenWrt software binaries. That is why we also use an ethernet cable to install the distribution in addition to the serial cable.
 \\ 
 
 \subsection{Procedure}
 The procedure is simple, we first connect the laptop and the Mesh Extender with the serial and ethernet cables. Then we plug the power cable in order to make the PCB run. We have to install the Serval software which create the OpenWrt files to transfer to the PCB on a linux environment. To this end, we have to install lots of dependencies like for example GNU awk, SVN, OpenSSL library ...etc. That is why we need to install VirtualBox on Macintosh laptop first. Then, just clone the repository OpenWrt from the Serval Project Github source and run the following commands :\\
-> ./scripts/feeds update serval\\
-> ./scripts/feeds install -p serval\\
-> ./scriptes/feeds install -a serval\\
-> make world (long time running...)\\ \\
+\begin{lstlisting}
+ ./scripts/feeds update serval
+ ./scripts/feeds install -p serval
+ ./scriptes/feeds install -a serval
+ make world (long time running...)
+\end{lstlisting}
 Therefore, the binary for installation should then be in: bin/ar71xx/openwrt-ar71xx-generic-gl-ar150-initramfs-kernel.bin \\
 To flash the PCB, we have to connect to the serial port at 115200 by typing:\\
+\begin{lstlisting}
 
-> cu -l /dev/cu.usbserial -s 115200\\
+ cu -l /dev/cu.usbserial -s 115200\\
+\end{lstlisting}
 
 or if we have trouble with cu: \\ 
+\begin{lstlisting}
 
-> screen /dev/cu.usbserial 115200 \\
+ screen /dev/cu.usbserial 115200 \\
+\end{lstlisting}
 
 In either case, we will have to reboot the node in some way, so that we see the uboot prompt. Then we have to press any key to interrupt the boot process.\\
 The Mesh Extender node will have an IP of 192.168.1.1, so we should pick another IP address on that subnet for the connected computer and type "httpd" to start the firmware update webserver. Then, just browse to http://192.168.1.1 and select the firmware file to upload, and trigger the firmware update. \\
@@ -118,9 +131,13 @@ The second automatic test i have to implement are related to the Mesh networks. 
 \subsection{Procedure}
 This test is a bit more complicated than the first one because it needs the output of the program to react according to it. This is a highest level of expect and did a lot of research to finally understand how we can fix this issue. Actually with expect, we can definitely not read the output of a shell. Or at least not directly. What we can though is to record or redirect this output into a file and then, read this file with expect. It is not very practical, it consumes time and memory but this is the only way... \\
 In this program, first of all i need to check the presence of the wireless networks. For this purpose, i use the airport tool available in the Unix environment. There in one little problem though. The airport software is most of the time already installed on laptops but we have to add it to the global PATH before we can use it. Once this is done, we can check for the Wifi networks from the shell with the command : \\
-> airport -s \\
-We filter the result of it by piping the output with the grep command which i redirect directly into a file in order to use it with expect after : \\
-> airport -s | grep servalproject > networks-found  \\
+\begin{lstlisting}
+> airport -s 
+\end{lstlisting}
+We filter the result of it by piping the output with the grep command which i redirect directly into a file in order to use it with expect after :
+\begin{lstlisting}
+> airport -s | grep servalproject > networks-found 
+\end{lstlisting}
 Now, we have to check if the networks-found file contains indeed the networks we are looking for. We also have to make sure that, if there is many Mesh Extender working at the same time, the networks we are looking at is really the one from the Mesh Extender we are testing and not the one from another. For this, we can just compare the mac address of both the Mesh Extender and the one from the Wifi network. For testing the test script, i just simulate and assume that the mac-address of the testing Mesh Extender will be in an other file. I just have then to open both of these files and compare them as simple strings in iterative loops. If both of the addresses match, test is successful. For this test I have thus to make use of file writing and access procedures in the TCL language which is really new for me. 
 
 \subsection{Code}

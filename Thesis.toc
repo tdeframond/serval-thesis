@@ -1,67 +1,125 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Declaration of Authorship}{i}{dummy.1}
+\defcounter {refsection}{0}\relax 
 \vspace {1em}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Abstract}{iii}{dummy.2}
+\defcounter {refsection}{0}\relax 
 \vspace {1em}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Acknowledgements}{iv}{dummy.3}
+\defcounter {refsection}{0}\relax 
 \vspace {1em}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{List of Figures}{vii}{dummy.5}
-\contentsline {chapter}{List of Tables}{viii}{dummy.7}
-\contentsline {chapter}{Abbreviations}{ix}{dummy.9}
-\contentsline {chapter}{Physical Constants}{x}{dummy.12}
-\contentsline {chapter}{Symbols}{xi}{dummy.15}
-\vspace {2em}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.18}
-\contentsline {section}{\numberline {1.1}Motivation}{1}{section.19}
-\contentsline {subsection}{\numberline {1.1.1}Australia}{1}{subsection.20}
-\contentsline {subsection}{\numberline {1.1.2}Telecommunication}{1}{subsection.21}
-\contentsline {subsection}{\numberline {1.1.3}Laboratory and Research}{2}{subsection.22}
-\contentsline {subsection}{\numberline {1.1.4}Humanitarian}{2}{subsection.23}
-\contentsline {section}{\numberline {1.2}Scope}{2}{section.24}
-\contentsline {section}{\numberline {1.3}Research questions}{3}{section.25}
-\contentsline {section}{\numberline {1.4}Structure of Thesis}{4}{section.26}
-\contentsline {chapter}{\numberline {2}Serval}{5}{chapter.27}
-\contentsline {section}{\numberline {2.1}What is Serval ?}{5}{section.28}
-\contentsline {subsection}{\numberline {2.1.1}The Serval Project}{5}{subsection.29}
-\contentsline {subsection}{\numberline {2.1.2}Why Serval ?}{5}{subsection.30}
-\contentsline {subsection}{\numberline {2.1.3}How does Serval work ?}{6}{subsection.31}
-\contentsline {subsubsection}{\numberline {2.1.3.1}The Serval Mesh application}{6}{subsubsection.32}
-\contentsline {subsubsection}{\numberline {2.1.3.2}The Serval Mesh Extender}{6}{subsubsection.33}
-\contentsline {subsection}{\numberline {2.1.4}Serval purposes}{7}{subsection.34}
-\contentsline {subsection}{\numberline {2.1.5}Serval's funding}{7}{subsection.35}
-\contentsline {section}{\numberline {2.2}The Pacific Humanitarian Challenge}{8}{section.36}
-\contentsline {subsection}{\numberline {2.2.1}The challenge}{8}{subsection.37}
-\contentsline {subsection}{\numberline {2.2.2}Mesh Extender, second version}{8}{subsection.38}
-\contentsline {subsection}{\numberline {2.2.3}Scope and project overview}{9}{subsection.39}
-\contentsline {chapter}{\numberline {3}Literature review}{10}{chapter.40}
-\contentsline {section}{\numberline {3.1}Emergency calling system}{10}{section.41}
-\contentsline {section}{\numberline {3.2}Competitors projects}{10}{section.42}
-\contentsline {section}{\numberline {3.3}Mesh network}{11}{section.43}
-\contentsline {section}{\numberline {3.4}Press}{11}{section.44}
-\contentsline {chapter}{\numberline {4}Method and Material}{13}{chapter.45}
-\contentsline {section}{\numberline {4.1}General Functioning}{13}{section.46}
-\contentsline {subsection}{\numberline {4.1.1}Management}{13}{subsection.47}
-\contentsline {subsection}{\numberline {4.1.2}Means and documentation}{14}{subsection.48}
-\contentsline {section}{\numberline {4.2}Test methodology}{14}{section.49}
-\contentsline {subsection}{\numberline {4.2.1}Test technology}{15}{subsection.50}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Bash}{15}{subsubsection.51}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Expect}{15}{subsubsection.52}
-\contentsline {subsection}{\numberline {4.2.2}Test overlook}{16}{subsection.53}
-\contentsline {subsection}{\numberline {4.2.3}Test creation}{16}{subsection.54}
-\contentsline {section}{\numberline {4.3}Simulation methodology...}{16}{section.55}
-\contentsline {chapter}{\numberline {5}Functionnal Hardware testing of Serval Mesh Extender}{17}{chapter.56}
-\contentsline {section}{\numberline {5.1}Environmental testing}{17}{section.57}
-\contentsline {section}{\numberline {5.2}Post-assembly testing}{17}{section.58}
-\contentsline {subsection}{\numberline {5.2.1}Test 1 : Boot-loader and flash firmware update}{17}{subsection.59}
-\contentsline {subsection}{\numberline {5.2.2}Test 2 : Network connections}{20}{subsection.135}
-\contentsline {chapter}{\numberline {6}Simulated Field Operation of Serval Mesh Extender}{22}{chapter.136}
-\contentsline {section}{\numberline {6.1}A Section}{22}{section.137}
-\contentsline {subsection}{\numberline {6.1.1}A Subsection}{23}{subsection.138}
-\contentsline {section}{\numberline {6.2}Another Section}{23}{section.139}
-\contentsline {chapter}{\numberline {7}Discussion}{24}{chapter.140}
-\contentsline {section}{\numberline {7.1}A Section}{24}{section.141}
-\contentsline {subsection}{\numberline {7.1.1}A Subsection}{24}{subsection.142}
-\contentsline {section}{\numberline {7.2}Another Section}{25}{section.143}
-\contentsline {chapter}{\numberline {8}Conclusions and Future Direction}{26}{chapter.144}
-\vspace {2em}
-\contentsline {chapter}{\numberline {A}An Appendix}{27}{appendix.145}
-\vspace {2em}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.1}Australia}{1}{subsection.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.2}Telecommunication}{1}{subsection.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.3}Laboratory and Research}{2}{subsection.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.4}Humanitarian}{2}{subsection.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Scope}{2}{section.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Research questions}{3}{section.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Structure of Thesis}{4}{section.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Serval}{5}{chapter.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}What is Serval ?}{5}{section.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}The Serval Project}{5}{subsection.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Why Serval ?}{5}{subsection.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.3}How does Serval work ?}{6}{subsection.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.1.3.1}The Serval Mesh application}{6}{subsubsection.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.1.3.2}The Serval Mesh Extender}{7}{subsubsection.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.1.3.3}The protocols}{8}{subsubsection.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.4}Serval purposes}{9}{subsection.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.5}Serval's funding}{9}{subsection.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}The Pacific Humanitarian Challenge}{9}{section.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}The challenge}{9}{subsection.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Mesh Extender, second version}{10}{subsection.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Scope and project overview}{11}{subsection.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Literature review}{12}{chapter.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Emergency calling system}{12}{section.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Competitors projects}{13}{section.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Mesh network}{13}{section.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Press}{14}{section.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Method and Material}{15}{chapter.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}General Functioning}{15}{section.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}Management}{15}{subsection.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}Means and documentation}{16}{subsection.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Test methodology}{16}{section.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.1}Test technology}{17}{subsection.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.1.1}Bash}{17}{subsubsection.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.1.2}Expect}{17}{subsubsection.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.2}Test overlook}{18}{subsection.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.3}Tools}{18}{subsection.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.4}Tests pattern}{18}{subsection.56}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Functionnal Hardware testing of Serval Mesh Extender}{20}{chapter.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Test 1 : Boot-loader and flash firmware update}{20}{section.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}Procedure}{21}{subsection.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.2}Code}{22}{subsection.72}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.3}Output and results}{24}{subsection.134}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Test 2 : Wireless connections}{24}{section.151}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}Procedure}{25}{subsection.152}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}Code}{25}{subsection.157}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.3}Output and results}{27}{subsection.229}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Tests in development}{28}{section.242}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.1}Test 3 : Ethernet connection}{28}{subsection.243}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.2}Test 4 : Serval server}{28}{subsection.244}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Results and discussion}{29}{chapter.245}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Conclusion and future directions}{31}{chapter.248}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}References}{33}{chapter.250}
